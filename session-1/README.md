@@ -19,6 +19,6 @@
 ## Repaso de ECMAScript 5: Lidiando con el hoisting
 ### Definir alcance y contexto en JavaScript
 ### Ejemplos de problemas con los que hay que lidiar en ES5
-## Variables de ámbito local y constantes
+## Variables de ámbito de bloque y constantes
 ### let
 ### const
