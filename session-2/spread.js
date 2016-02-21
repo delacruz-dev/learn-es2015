@@ -9,12 +9,12 @@ function f(x, y=12){
 
 console.log(f(3)); // 15
 
-function f(x, ...y){
+function fx(x, ...y){
   return x + y.length;
 }
-console.log(f(3, "hello", true)); // 5
+console.log(fx(3, "hello", true)); // 5
 
-function f(x, y, z) {
+function fs(x, y, z) {
   return x + y + z;
 }
-console.log(f(...[1, 2, 3])); // 6
+console.log(fs(...[1, 2, 3])); // 6
