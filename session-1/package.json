@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "babel": "babel my-file.js --out-file compiled.js"
+    "babel": "babel my-file.js --out-file compiled.js",
+    "start": "babel-node"
   },
   "author": "",
   "license": "ISC",
