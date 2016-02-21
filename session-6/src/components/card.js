@@ -8,7 +8,7 @@ class Card {
   render() {
     const div = document.createElement('div');
     div.class = 'Card';
-    div.textContent = this._text;
+    div.textContent = this._title;
     return div;
   }
 };
