@@ -14,3 +14,4 @@
 #### Ejemplos de operador de propagación
 ## Funciones flecha
 ### Ejemplos de funciones flecha
+### Qué pasa con `this`?
