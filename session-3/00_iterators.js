@@ -19,29 +19,30 @@ for (let character of abc) {
 }
 
 // Any kind of object impllementing the following pattern
-function makeCountDown(counter) {
-  let _counter = counter;
-  return {
-    next: function() {
-      const value = _counter--;
-      const done = _counter <= 0;
+let countdown = {
+  count: 10,
+  [Symbol.iterator]() {
+    return {
+      next() {
+        const value = this.count--;
+        const done = this.count <= 0;
 
-      return {
-        value,
-        done
-      };
+        return {
+          value: this.count,
+          done
+        };
+      }
     }
   }
+};
+
+// console.log(countdown.next()); // { value: 5, done: false }
+// console.log(countdown.next()); // { value: 4, done: false }
+// console.log(countdown.next()); // { value: 3, done: false }
+// console.log(countdown.next()); // { value: 2, done: false }
+// console.log(countdown.next()); // { value: 1, done: true }
+// console.log(countdown.next()); // { value: 0, done: true }
+
+for(let value of countdown) {
+ console.log(`${value}...`);
 }
-
-const countdown = makeCountDown(5);
-console.log(countdown.next()); // { value: 5, done: false }
-console.log(countdown.next()); // { value: 4, done: false }
-console.log(countdown.next()); // { value: 3, done: false }
-console.log(countdown.next()); // { value: 2, done: false }
-console.log(countdown.next()); // { value: 1, done: true }
-console.log(countdown.next()); // { value: 0, done: true }
-
-// for(let value of countdown) {
-//  console.log(`${value}...`);
-// }

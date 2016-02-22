@@ -1,10 +1,14 @@
 import Card from './components/card';
 import Pokedex from './domain';
 
-const card = new Card({
-  title: 'Hello, World!',
-  description: 'This is supposed to be a Pokemon Card',
-  imageUrl: 'path/to/image.url'
-});
-
-document.body.appendChild(card.render());
+Pokedex.get('pokemons_list_use_case')
+  .execute()
+  .then(({pokemons}) => {
+    return pokemons.map(p => new Card({
+      title: p.name
+    }))
+  })
+  .then((cards) => {
+    for(let card of cards)
+      document.body.appendChild(card.render());
+  });
