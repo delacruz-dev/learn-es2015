@@ -1,5 +1,6 @@
 import Card from './components/card';
 import Pokedex from './domain';
+import './index.scss';
 
 Pokedex.get('pokemons_list_use_case')
   .execute()

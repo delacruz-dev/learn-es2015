@@ -32,8 +32,8 @@ if(TARGET === 'start' || !TARGET) {
     },
     module: {
       loaders: [{
-        test: /\.css$/,
-        loaders: [ 'style-loader', 'css-loader' ],
+        test: /\.s?css$/,
+        loaders: [ 'style-loader', 'css-loader', 'sass-loader' ],
         include: APP_PATH
       }]
     },
@@ -47,8 +47,8 @@ if(TARGET === 'build') {
   module.exports = merge(common, {
     module: {
       loaders: [{
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
+        test: /\.s?css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'sass-loader'),
         include: APP_PATH
       }]
     },
