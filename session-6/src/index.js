@@ -4,9 +4,10 @@ import './index.scss';
 
 Pokedex.get('pokemons_list_use_case')
   .execute()
-  .then(({pokemons}) => {
+  .then((pokemons) => {
     return pokemons.map(p => new Card({
-      title: p.name
+      title: p.name,
+      image: p.image
     }))
   })
   .then((cards) => {

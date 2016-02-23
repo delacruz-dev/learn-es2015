@@ -12,16 +12,32 @@ export default class ApiPokemonRepository extends PokemonRepository {
 
   list({query = ''} = {}) {
     return new Promise((resolve, reject) => {
-      this._fetcher.get('http://pokeapi.co/api/v2/pokemon')
+      this._fetcher.get('http://pokeapi.co/api/v1/pokemon')
+        .query({ limit: 12 })
         .end((err, resp) => {
           if(err){
             reject(err);
             return;
           }
           try {
-            resolve({pokemons: JSON.parse(resp.text).map(PokemonFactory.pokemonEntity)})
+            resolve(JSON.parse(resp.text).objects.map(PokemonFactory.pokemonEntity))
           } catch(err) { reject(err); }
         });
       });
   };
+
+  sprite({resource_uri} = {}){
+    return new Promise((resolve, reject) => {
+      this._fetcher.get(`http://pokeapi.co${resource_uri}`)
+        .end((err, resp) => {
+          if(err) {
+            reject(err);
+            return;
+          }
+          try {
+            resolve(PokemonFactory.spriteEntity(JSON.parse(resp.text)));
+          } catch(err) { reject(err); }
+        })
+      });
+  }
 }
