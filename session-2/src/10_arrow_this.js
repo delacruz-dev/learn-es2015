@@ -22,7 +22,8 @@ const F1Race = {
 
 F1Race.init();
 
-// If we redefine the init function including an arrow:
+//// If we redefine the init function including an arrow:
+
 // F1Race.init = function() {
 //   console.log('Los siguientes pilotos van a comenzar la carrera:', this.drivers);
 //   setTimeout(() => console.log('El ganador es', randomWinner(this.drivers)), 1000);

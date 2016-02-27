@@ -9,9 +9,9 @@ function suma({a, b} = {}) {
 };
 
 // now, we can pass separate values
-const one = 1;
-const two = 2;
-console.log(suma({a: two, b: three}));
+const three = 3;
+const four = 4;
+console.log(suma({a: three, b: four}));
 
 // If the properties have the same name than the declared in the function definition, ES6 assigns them automatically
 const a = 3;
