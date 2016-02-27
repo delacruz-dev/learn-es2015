@@ -20,3 +20,8 @@ console.log(truck.wheelCount);
 // wheelCount ya no está delegado
 Vehicle.prototype.wheelCount = 10;
 console.log(truck.wheelCount);
+
+// obviamente siempre podemos hacer lo mismo con métodos, ya que
+// un método no es más que una función asignada a una propiedad:
+Vehicle.prototype.go = function go() { return 'Brooommmm!' };
+console.log(truck.go());
