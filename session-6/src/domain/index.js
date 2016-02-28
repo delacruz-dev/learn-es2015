@@ -4,7 +4,7 @@ class Pokedex {
   constructor(){
     this._deps = new Map();
 
-    this._deps.set('pokemons_list_use_case', PokemonFactory.pokemonListUseCase());
+    this._deps.set('pokemon_list_use_case', PokemonFactory.pokemonListUseCase());
   }
 
   get(key) {

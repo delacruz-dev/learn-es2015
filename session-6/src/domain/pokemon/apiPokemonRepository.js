@@ -13,7 +13,7 @@ export default class ApiPokemonRepository extends PokemonRepository {
   list({query = ''} = {}) {
     return new Promise((resolve, reject) => {
       this._fetcher.get('http://pokeapi.co/api/v1/pokemon')
-        .query({ limit: 12 })
+        .query({ limit: 20 })
         .end((err, resp) => {
           if(err){
             reject(err);
