@@ -1,3 +1,8 @@
+// El operador de propagación spread operator permite que una 
+// expresión sea expandida en situaciones donde se esperan múltiples 
+// argumentos (llamadas a funciones) o múltiples elementos 
+// (arrays).
+
 const values = [1, 2, 3, 4];
 
 console.log(values); // returns an array
