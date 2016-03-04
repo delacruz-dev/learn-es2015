@@ -7,10 +7,10 @@ use node --harmony-proxies
 */
 const target = {};
 const handler = {
-    get(target, propKey, receiver) {
-        console.log(`get ${propKey}`);
-        return 'hello';
-    }
+  get(target, propKey, receiver) {
+    console.log(`get ${propKey}`);
+    return 'hello';
+  }
 }
 
 const proxy = new Proxy(target, handler);
@@ -18,5 +18,3 @@ const proxy = new Proxy(target, handler);
 console.log(proxy.foo); 
 // get foo
 // hello
-
-// TODO: Propiedades virtuales: `nombre completo`

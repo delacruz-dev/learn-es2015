@@ -1,3 +1,12 @@
+// El método Array.of() crea una nueva instancia Array 
+// con un número variable de elementos pasados como argumento, 
+// independientemente del número o del tipo.
+
+// La diferencia entre Array.of() y el constructor Array reside 
+// en como maneja los parámetros de tipo entero: Array.of(42) 
+// crea un array con un solo elemento, 42, mientras Array(42) 
+// crea un array con 42 elementos, el cual, cada uno es de tipo undefined.
+
 let items = new Array(1, 2);        // length is 2
 console.log(items.length);          // 2
 console.log(items[0]);              // 1

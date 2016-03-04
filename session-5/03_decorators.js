@@ -19,4 +19,4 @@ const person = new Person({
 });
 
 console.log(person.name());
-// person.name = () => { return `${this.first}` }
+person.name = () => { return `${this.first}` }
